@@ -2,22 +2,22 @@
 #include <stdlib.h>
 #include <math.h>
 //=======================================================================================
-//Прототипи
+//РџСЂРѕС‚РѕС‚РёРїРё
 double func(double x);
 int files(double x, int N, double delta,char group_name[6], char student_name[13]);
 void print_binary(char  group_name[6], char student_name[13]);
 
 //=======================================================================================
-//Тіло функції
+//РўС–Р»Рѕ С„СѓРЅРєС†С–С—
 int main()
 {
     char  group_name[6]={0}, student_name[13]={0};
     double x1, x2, delta;
     int N;
-    FILE* fp_input = fopen ("Input.txt", "r");//відкриваємо вхідний файл
+    FILE* fp_input = fopen ("Input.txt", "r");//РІС–РґРєСЂРёРІР°С”РјРѕ РІС…С–РґРЅРёР№ С„Р°Р№Р»
     if (fp_input==NULL)
     {
-        printf("Error! File cannot be opened");//не  можемо відкрити файл
+        printf("Error! File cannot be opened");//РЅРµ  РјРѕР¶РµРјРѕ РІС–РґРєСЂРёС‚Рё С„Р°Р№Р»
     }
     else
     {
@@ -45,19 +45,19 @@ int main()
     return(0);
 }
 //==========================================================================================================
-//Реалізація
+//Р РµР°Р»С–Р·Р°С†С–СЏ
 double func(double x)
 {
-    return pow(x,3)/30-4*pow(x,2)+50;//повертаємо це значення в функцію
+    return pow(x,3)/30-4*pow(x,2)+50;//РїРѕРІРµСЂС‚Р°С”РјРѕ С†Рµ Р·РЅР°С‡РµРЅРЅСЏ РІ С„СѓРЅРєС†С–СЋ
 }
-//створюємо та записуємо інформацію в текстову таблицю та бінарний файл
+//СЃС‚РІРѕСЂСЋС”РјРѕ С‚Р° Р·Р°РїРёСЃСѓС”РјРѕ С–РЅС„РѕСЂРјР°С†С–СЋ РІ С‚РµРєСЃС‚РѕРІСѓ С‚Р°Р±Р»РёС†СЋ С‚Р° Р±С–РЅР°СЂРЅРёР№ С„Р°Р№Р»
 int files(double x, int N, double delta,char  group_name[6], char student_name[13])
 {
     FILE* input_table = fopen ("OutputTable.txt", "w");
     FILE* bina = fopen ("OutBinary.bin", "w+b");
     if (input_table==NULL || bina==NULL)
     {
-        printf("Error! File cannot be opened");//не можемо відкрити файл
+        printf("Error! File cannot be opened");//РЅРµ РјРѕР¶РµРјРѕ РІС–РґРєСЂРёС‚Рё С„Р°Р№Р»
         return(0);
     }
     else
@@ -86,7 +86,7 @@ int files(double x, int N, double delta,char  group_name[6], char student_name[1
         return(1);
     }
 }
-//читаємо та відображаємо значення з бінарного файлу
+//С‡РёС‚Р°С”РјРѕ С‚Р° РІС–РґРѕР±СЂР°Р¶Р°С”РјРѕ Р·РЅР°С‡РµРЅРЅСЏ Р· Р±С–РЅР°СЂРЅРѕРіРѕ С„Р°Р№Р»Сѓ
 void print_binary(char  group_name[6],char student_name[13])
 {
     int N=0;
@@ -94,9 +94,9 @@ void print_binary(char  group_name[6],char student_name[13])
     FILE* bina = fopen("OutBinary.bin", "r+b");
     if (bina==NULL)
     {
-         printf("Error, the binary file don't exist");//Помилка, бінарний файл не існує
+         printf("Error, the binary file don't exist");//РџРѕРјРёР»РєР°, Р±С–РЅР°СЂРЅРёР№ С„Р°Р№Р» РЅРµ С–СЃРЅСѓС”
     }
-    else//виводимо інформацію з бінарного файлу на екран
+    else//РІРёРІРѕРґРёРјРѕ С–РЅС„РѕСЂРјР°С†С–СЋ Р· Р±С–РЅР°СЂРЅРѕРіРѕ С„Р°Р№Р»Сѓ РЅР° РµРєСЂР°РЅ
     {
     printf("\n****************************");
     printf("\n*  N   *   X    *   F(X)   *");
